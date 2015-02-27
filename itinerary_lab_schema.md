@@ -154,9 +154,8 @@ has_many :reviews, as: :reviewable
 attraction.rb
 has_many :users_attractions, dependent: :destroy
 has many :users, through: attractions_users
-
-has_many :itineraries_attractions, dependent :destroy
-has_many :itineraries, through: :itineraries_attractions 
+----------------------------------
+belongs_to :itinerary
 has_many :reviews, as: :reviewable
 ——————————————————————————————————
 review.rb 
@@ -166,11 +165,9 @@ belongs_to :user
 users_itineraries.rb
 belongs_to :user
 belongs_to :movie
+
 ——————————————————————————————————
 attractions_users.rb
 belongs_to :attraction
 belongs_to :user
 ——————————————————————————————————
-itineraries_attractions.rb
-belongs_to :itinerary
-belongs_to :attraction
