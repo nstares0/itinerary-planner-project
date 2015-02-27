@@ -119,3 +119,55 @@ Are we going with the user permissions? I thought we decided against it.
 ##### Questions
 Nick and Sue, I think the instructions about reviews means reviews can be left about other users. Like ""Sue is a great travel partner in XYZ country since she knows that language."
 
+-------------------------------------------
+### -- user_permissions --
+##### To be used only if we are implementing "Admin" and "Editor" capabilities.
+If we're not doing "Admin" and "Editor", then there is no need for this table. __This one is hard to figure out__ since I have to think of it in terms of Rails. I didn't realize at first how different it could be because of that. I can describe it in good ol' SQL. I'm having trouble being confident about setting it up in Rails. I'm beginning to think we drop this idea.
+
+##### Table relationships
+- belongs_to :attractions, :itineraries, :users, polymorphic: true
+
+##### Columns
+- __id__ : `integer <==Primary key.
+- __user_id__		: `integer` __(validate not nil)__  <==This is who has this permission.
+- __permission_name__		: `string` __(validate not nil)__  <==This is either "Admin" or "Editor". If neither admin or editor are declared for a user on an itinerary or attraction, then that user is a companion.
+
+  
+(nick) this is what i worked out for the relationships. there is some overlap with christian but i am putting it in here for reference.
+
+user.rb  has_many :users_itineraries, dependent: :destroy
+has_many :itineraries, through: :users_itineraries
+
+has_many :users_attractions, dependent: :destroy
+has_many :attractions, through: :attractions_users 
+
+has_many :reviews
+——————————————————————————————————
+itinerary.rb has_many :users_itineraries, dependent:destroy
+has_many :users, through: users_itineraries
+
+has_many :itineraries_attractions, dependent :destroy
+has_many :attractions, through: :itineraries_attractions
+
+has_many :reviews, as: :reviewable
+——————————————————————————————————
+attraction.rb
+has_many :users_attractions, dependent: :destroy
+has many :users, through: attractions_users
+----------------------------------
+belongs_to :itinerary
+has_many :reviews, as: :reviewable
+——————————————————————————————————
+review.rb 
+belongs_to :reviewable, polymorphic: true
+belongs_to :user
+——————————————————————————————————
+users_itineraries.rb
+belongs_to :user
+belongs_to :movie
+
+——————————————————————————————————
+attractions_users.rb
+belongs_to :attraction
+belongs_to :user
+——————————————————————————————————
