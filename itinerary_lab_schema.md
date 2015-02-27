@@ -2,13 +2,13 @@
 #### Christian, Sue, Nick S. are team “Best team name ever”
 
 -------------------------------------------
-### Tables: `users`, `itineraries`, `attractions`, `reviews`, `user permissions <-maybe`
+### Tables: `users`, `itineraries`, `attractions`, `reviews`, `user_itineraries`, `user permissions <-maybe`
 ##### Questions
 Are we going with the user permissions? I thought we decided against it.
 
 -------------------------------------------
 ### -- users --
-(By virtue of a user belonging to an itinerary or attraction, they then are a “companion” )
+(By virtue of a user belonging to an itinerary or attraction, they then are a “companion”. No table holds the status companion. The state of being a companion is the relationship to other users on the same itineraries or attractions. )
 
 ##### Table relationships
 - has_many :user_itineraries, dependent: :destroy
@@ -118,19 +118,4 @@ Are we going with the user permissions? I thought we decided against it.
 
 ##### Questions
 Nick and Sue, I think the instructions about reviews means reviews can be left about other users. Like ""Sue is a great travel partner in XYZ country since she knows that language."
-
--------------------------------------------
-### -- user_permissions --
-##### To be used only if we are implementing "Admin" and "Editor" capabilities.
-If we're not doing "Admin" and "Editor", then there is no need for this table. __This one is hard to figure out__ since I have to think of it in terms of Rails. I didn't realize at first how different it could be because of that. I can describe it in good ol' SQL. I'm having trouble being confident about setting it up in Rails. I'm beginning to think we drop this idea.
-
-##### Table relationships
-- belongs_to :attractions, :itineraries, :users, polymorphic: true
-
-##### Columns
-- __id__ : `integer <==Primary key.
-- __user_id__		: `integer` __(validate not nil)__  <==This is who has this permission.
-- __permission_name__		: `string` __(validate not nil)__  <==This is either "Admin" or "Editor". If neither admin or editor are declared for a user on an itinerary or attraction, then that user is a companion.
-
-  
 
