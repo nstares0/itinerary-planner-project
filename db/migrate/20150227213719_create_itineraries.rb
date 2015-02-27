@@ -1,11 +1,10 @@
 class CreateItineraries < ActiveRecord::Migration
   def change
     create_table :itineraries do |t|
-      t.string :origin
-      t.string :destination
       t.string :name
-      t.date :departure_date
-      t.date :return_date
+      t.date :start_date
+      t.date :end_date
+      t.string :destination
 
       t.timestamps null: false
     end

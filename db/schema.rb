@@ -11,40 +11,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150227094008) do
+ActiveRecord::Schema.define(version: 20150227214321) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "attractions", force: :cascade do |t|
+    t.string   "name"
     t.string   "location"
-    t.string   "name"
-    t.date     "attraction_date"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
-  end
-
-  create_table "itineraries", force: :cascade do |t|
-    t.string   "origin"
-    t.string   "destination"
-    t.string   "name"
-    t.date     "departure_date"
-    t.date     "return_date"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
-  end
-
-  create_table "reviews", force: :cascade do |t|
-    t.integer  "user_id"
-    t.string   "title"
-    t.text     "comment"
+    t.date     "date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "user_permissions", force: :cascade do |t|
+  create_table "itineraries", force: :cascade do |t|
+    t.string   "name"
+    t.date     "start_date"
+    t.date     "end_date"
+    t.string   "destination"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.text     "content"
+    t.integer  "reviewable_id"
+    t.string   "reviewable_type"
     t.integer  "user_id"
-    t.string   "permission_name"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
   end
@@ -53,9 +46,16 @@ ActiveRecord::Schema.define(version: 20150227094008) do
     t.string   "first_name"
     t.string   "last_name"
     t.string   "email"
-    t.string   "password"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "users_itineraries_attractions", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "itinerary_id"
+    t.integer  "attraction_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
 
 end
