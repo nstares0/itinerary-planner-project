@@ -100,7 +100,7 @@ Are we going with the user permissions? I thought we decided against it.
 - __id__		: `integer` <==Primary key.
 - __location__	: `string`  <==Address.
 - __name__		: `string`  <==Location name Ex. Eifel Tower, Bob's House, US Capital...
-- __date__		: `date`
+- __attraction_date__		: `date`
 
 -------------------------------------------
 ### -- reviews --
@@ -113,7 +113,8 @@ Are we going with the user permissions? I thought we decided against it.
 ##### Columns
 - __id__ : `integer <==Primary key.
 - __user_id__		: `integer` <==This is who created the review.
-- __comment__		: `string`  <==This is the review.
+- __title__		: `string`  <==Title of the review.
+- __comment__		: `text`  <==This is the review.
 
 ##### Questions
 Nick and Sue, I think the instructions about reviews means reviews can be left about other users. Like ""Sue is a great travel partner in XYZ country since she knows that language."
