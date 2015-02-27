@@ -133,4 +133,44 @@ If we're not doing "Admin" and "Editor", then there is no need for this table. _
 - __permission_name__		: `string` __(validate not nil)__  <==This is either "Admin" or "Editor". If neither admin or editor are declared for a user on an itinerary or attraction, then that user is a companion.
 
   
+(nick) this is what i worked out for the relationships. there is some overlap with christian but i am putting it in here for reference.
 
+user.rb  has_many :users_itineraries, dependent: :destroy
+has_many :itineraries, through: :users_itineraries
+
+has_many :users_attractions, dependent: :destroy
+has_many :attractions, through: :attractions_users 
+
+has_many :reviews
+——————————————————————————————————
+itinerary.rb has_many :users_itineraries, dependent:destroy
+has_many :users, through: users_itineraries
+
+has_many :itineraries_attractions, dependent :destroy
+has_many :attractions, through: :itineraries_attractions
+
+has_many :reviews, as: :reviewable
+——————————————————————————————————
+attraction.rb
+has_many :users_attractions, dependent: :destroy
+has many :users, through: attractions_users
+
+has_many :itineraries_attractions, dependent :destroy
+has_many :itineraries, through: :itineraries_attractions 
+has_many :reviews, as: :reviewable
+——————————————————————————————————
+review.rb 
+belongs_to :reviewable, polymorphic: true
+belongs_to :user
+——————————————————————————————————
+users_itineraries.rb
+belongs_to :user
+belongs_to :movie
+——————————————————————————————————
+attractions_users.rb
+belongs_to :attraction
+belongs_to :user
+——————————————————————————————————
+itineraries_attractions.rb
+belongs_to :itinerary
+belongs_to :attraction
