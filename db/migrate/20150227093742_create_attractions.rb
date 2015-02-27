@@ -3,7 +3,7 @@ class CreateAttractions < ActiveRecord::Migration
     create_table :attractions do |t|
       t.string :location
       t.string :name
-      t.date :attration_date
+      t.date :attraction_date
 
       t.timestamps null: false
     end

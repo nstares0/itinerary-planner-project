@@ -19,9 +19,9 @@ ActiveRecord::Schema.define(version: 20150227094008) do
   create_table "attractions", force: :cascade do |t|
     t.string   "location"
     t.string   "name"
-    t.date     "attration_date"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.date     "attraction_date"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
   create_table "itineraries", force: :cascade do |t|
