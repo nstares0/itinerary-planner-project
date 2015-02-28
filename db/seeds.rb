@@ -61,18 +61,18 @@ attractions16 = Attraction.create(:name => "Ali's house in 1-1-2018", :location 
 attractions17 = Attraction.create(:name => "Deborah's house in 6-1-2090", :location => "228 Elmwood St. Redwood City, CA", :date => Time.new(2090,1,6).to_date)
 attractions18 = Attraction.create(:name => "Austrailia 1-1-3000", :location => "228 Elmwood St. Redwood City, CA", :date => Time.new(3000,1,1).to_date)
 
-review1  = Review.create(:user_id => "1", :comment => "Yadda Yadda yaddah Loreum Ipsum Yadda Yadda yaddah Loreum Ipsum Yadda Yadda yaddah Loreum Ipsum Yadda Yadda yaddah Loreum Ipsum Yadda Yadda yaddah Loreum Ipsum Yadda Yadda yaddah Loreum Ipsum Yadda Yadda yaddah Loreum Ipsum Yadda Yadda yaddah Loreum Ipsum")
-review2  = Review.create(:user_id => "1", :comment => "Blah Blah Yipee Yo Blah Blah Yipee Yo Blah Blah Yipee Yo Blah Blah Yipee Yo Blah Blah Yipee Yo Blah Blah Yipee Yo Blah Blah Yipee Yo Blah Blah Yipee Yo Blah Blah Yipee Yo ")
-review3  = Review.create(:user_id => "1", :comment => "Blah Blah Yipee Yo Blah Blah Yipee Yo Blah Blah Yipee Yo Blah Blah Yipee Yo Blah Blah Yipee Yo Blah Blah Yipee Yo Blah Blah Yipee Yo Blah Blah Yipee Yo Blah Blah Yipee Yo ")
-review4  = Review.create(:user_id => "2", :comment => "Blah Blah Yipee Yo Blah Blah Yipee Yo Blah Blah Yipee Yo Blah Blah Yipee Yo Blah Blah Yipee Yo Blah Blah Yipee Yo Blah Blah Yipee Yo Blah Blah Yipee Yo Blah Blah Yipee Yo ")
-review5  = Review.create(:user_id => "4", :comment => "Now is the time for all good man and women to go to this attraction Ipsum")
-review6  = Review.create(:user_id => "4", :comment => "Now is the time for all good man and women to go to this attraction Ipsum")
-review7  = Review.create(:user_id => "5", :comment => "Now is the time for all good man and women to go to this attraction Ipsum")
-review8  = Review.create(:user_id => "6", :comment => "Yadda Yadda yaddah Loreum Ipsum Yadda Yadda yaddah Loreum Ipsum Yadda Yadda yaddah Loreum Ipsum Yadda Yadda yaddah Loreum Ipsum Yadda Yadda yaddah Loreum Ipsum Yadda Yadda yaddah Loreum Ipsum Yadda Yadda yaddah Loreum Ipsum Yadda Yadda yaddah Loreum Ipsum")
-review9  = Review.create(:user_id => "7", :comment => "Boogie woogie mish mash")
-review10 = Review.create(:user_id => "8", :comment => "Boogie woogie mish mash")
-review11 = Review.create(:user_id => "9", :comment => "Boogie woogie mish mash")
-review12 = Review.create(:user_id => "10", :comment => "Boogie woogie mish mash")
+review1  = Review.create(:user_id => "1", :content => "Yadda Yadda yaddah Loreum Ipsum Yadda Yadda yaddah Loreum Ipsum Yadda Yadda yaddah Loreum Ipsum Yadda Yadda yaddah Loreum Ipsum Yadda Yadda yaddah Loreum Ipsum Yadda Yadda yaddah Loreum Ipsum Yadda Yadda yaddah Loreum Ipsum Yadda Yadda yaddah Loreum Ipsum")
+review2  = Review.create(:user_id => "1", :content => "Blah Blah Yipee Yo Blah Blah Yipee Yo Blah Blah Yipee Yo Blah Blah Yipee Yo Blah Blah Yipee Yo Blah Blah Yipee Yo Blah Blah Yipee Yo Blah Blah Yipee Yo Blah Blah Yipee Yo ")
+review3  = Review.create(:user_id => "1", :content => "Blah Blah Yipee Yo Blah Blah Yipee Yo Blah Blah Yipee Yo Blah Blah Yipee Yo Blah Blah Yipee Yo Blah Blah Yipee Yo Blah Blah Yipee Yo Blah Blah Yipee Yo Blah Blah Yipee Yo ")
+review4  = Review.create(:user_id => "2", :content => "Blah Blah Yipee Yo Blah Blah Yipee Yo Blah Blah Yipee Yo Blah Blah Yipee Yo Blah Blah Yipee Yo Blah Blah Yipee Yo Blah Blah Yipee Yo Blah Blah Yipee Yo Blah Blah Yipee Yo ")
+review5  = Review.create(:user_id => "4", :content => "Now is the time for all good man and women to go to this attraction Ipsum")
+review6  = Review.create(:user_id => "4", :content => "Now is the time for all good man and women to go to this attraction Ipsum")
+review7  = Review.create(:user_id => "5", :content => "Now is the time for all good man and women to go to this attraction Ipsum")
+review8  = Review.create(:user_id => "6", :content => "Yadda Yadda yaddah Loreum Ipsum Yadda Yadda yaddah Loreum Ipsum Yadda Yadda yaddah Loreum Ipsum Yadda Yadda yaddah Loreum Ipsum Yadda Yadda yaddah Loreum Ipsum Yadda Yadda yaddah Loreum Ipsum Yadda Yadda yaddah Loreum Ipsum Yadda Yadda yaddah Loreum Ipsum")
+review9  = Review.create(:user_id => "7", :content => "Boogie woogie mish mash")
+review10 = Review.create(:user_id => "8", :content => "Boogie woogie mish mash")
+review11 = Review.create(:user_id => "9", :content => "Boogie woogie mish mash")
+review12 = Review.create(:user_id => "10", :content => "Boogie woogie mish mash")
 
 itinerary1.users << user1
 itinerary2.users << user1
@@ -106,11 +106,11 @@ itinerary3.attractions << attraction18
 itinerary4.attractions << attraction7
 itinerary5.attractions << attraction7
 
-attraction1.reviews << review4
-attraction2.reviews << review3
-attraction3.reviews << review2
+# attraction1.reviews << review4
+# attraction2.reviews << review3
+# attraction3.reviews << review2
 
-itinerary1.reviews << review1
-itinerary2.reviews << review6
-itinerary3.reviews << review5
+# itinerary1.reviews << review1
+# itinerary2.reviews << review6
+# itinerary3.reviews << review5
 
