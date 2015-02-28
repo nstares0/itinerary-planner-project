@@ -1,0 +1,13 @@
+<h1>Destinations#show</h1>
+<p>Find me in app/views/destinations/show.html.erb</p>
+
+    @itinerary = <%= @itinerary.id %> | <%= @itinerary.name %>  
+    <br>
+    <ul> companions: 
+    <% @itinerary.companions.each do |companion| %>
+    <li><%= companion.first_name %> <%= companion.last_name %> (<%= companion.id %>)</li>
+    <% end %>
+    </ul>
+
+    <br>
+    @destination = <%= @destination.id  %> | <%= @destination.name  %>

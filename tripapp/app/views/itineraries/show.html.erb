@@ -1,0 +1,11 @@
+<h1>Itineraries#show</h1>
+<p>Find me in app/views/itineraries/show.html.erb</p>
+Itinerary - <%= @itinerary.name %> | <%= link_to "EDIT", edit_itinerary_path(@itinerary) %> | <%= link_to "DELETE", itinerary_path(@itinerary), method: "delete" , data: {confirm: "are you sure?"}%>
+<br>
+<ul>
+<% @destinations.each do |destination| %>
+
+<li> <%= link_to "#{destination.name}", itinerary_destination_path(@itinerary.id,destination.id ) %> </li>
+<br>
+<% end %>
+</ul>
