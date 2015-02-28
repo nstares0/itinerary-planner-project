@@ -36,9 +36,9 @@ Rails.application.routes.draw do
 
   # get 'itineraries/edit'
 
-  # get 'access/signup'
+  get 'access/signup'
 
-  # get 'access/login'
+  get 'access/login'
 
-  # get 'access/edit'
+  get 'access/edit'
 end
